@@ -1,26 +1,28 @@
-/** 
- first try-- > fail
- * function changeColor(item){
-    item.style.backgroundColor = 'green'
-};
-
-let x = document.getElementById("C");
-x.addEventListener('click', changeColor);
-**/
-
-
-console.log('js esta conectado com html?')
-
-
 function changeColorToGreen(element){
     element.target.style.backgroundColor = 'green'
 }
+function changeColorToWhite(element){
+    element.target.style.backgroundColor = 'white'
+}
 
-let x = document.getElementById('C')
-x.addEventListener('mouseup', changeColorToGreen)
-x.removeEventListener('mousedown', changeColorToGreen)
 
-console.log(x)
-console.log(typeof x)
+let sound = new Audio();
+sound.src = "notes/A.mp3"
+
+function playSound(){
+    sound.play()
+}
+
+let x = document.getElementById('C') // testando na primeira tecla
+x.addEventListener('mousedown', changeColorToGreen)
+x.addEventListener('mouseup', changeColorToWhite)
+x.addEventListener('mousedown', playSound)
+
+
+
+
+
+
+
 
 
