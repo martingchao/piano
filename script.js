@@ -9,21 +9,6 @@ function changeColorToBlack(element){
 }
 
 
-/* testing just for the C key
-let sound = new Audio();
-sound.src = "notes/C.mp3"
-function playSound(){
-    sound.play()
-}
-
-
-let x = document.getElementById('C') // testando na primeira tecla
-x.addEventListener('mousedown', changeColorToGreen)
-x.addEventListener('mouseup', changeColorToWhite)
-x.addEventListener('mousedown', playSound)
-
-*/
-
 const listOfKeys = document.querySelectorAll('.key') //list of all key elements
 console.log(listOfKeys)
 
