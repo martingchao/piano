@@ -4,25 +4,44 @@ function changeColorToGreen(element){
 function changeColorToWhite(element){
     element.target.style.backgroundColor = 'white'
 }
+function changeColorToBlack(element){
+    element.target.style.backgroundColor = 'black'
+}
 
 
+/* testing just for the C key
 let sound = new Audio();
-sound.src = "notes/A.mp3"
-
+sound.src = "notes/C.mp3"
 function playSound(){
     sound.play()
 }
+
 
 let x = document.getElementById('C') // testando na primeira tecla
 x.addEventListener('mousedown', changeColorToGreen)
 x.addEventListener('mouseup', changeColorToWhite)
 x.addEventListener('mousedown', playSound)
 
+*/
 
+const listOfKeys = document.querySelectorAll('.key') //list of all key elements
+console.log(listOfKeys)
 
+function playNote(element){
+    let sound = new Audio();
+    sound.src = 'notes/'+element.target.getAttribute('id')+'.mp3'
+    sound.play()
 
+}
 
-
-
-
+listOfKeys.forEach(key =>{
+    key.addEventListener('mousedown', changeColorToGreen)
+    if(key.classList.contains('white')){
+        key.addEventListener('mouseup', changeColorToWhite)
+    } else {
+        key.addEventListener('mouseup', changeColorToBlack)
+    }
+    console.log(key.getAttribute('id')+'.mp3')
+    key.addEventListener('mousedown', playNote)
+})
 
